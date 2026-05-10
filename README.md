@@ -1,6 +1,6 @@
 # LLM Architecture Homework 4
 
-![LLM Architecture Homework 4 banner](img/github-banner.svg)
+![Nebius AI Performance Engineering LLM Architecture Lab banner](img/github-banner.svg)
 
 This repository wraps two notebook assignments for experimenting with modern language-model adaptation and architecture components.
 
