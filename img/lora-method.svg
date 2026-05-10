@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="540" viewBox="0 0 1280 540" role="img" aria-labelledby="title desc">
+  <title id="title">LoRA method overview</title>
+  <desc id="desc">A frozen base model receives a small trainable low-rank adapter update.</desc>
+  <rect width="1280" height="540" rx="0" fill="#fbfcfd"/>
+  <text x="64" y="76" fill="#111820" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">LoRA: freeze the model, train the small update</text>
+  <text x="64" y="118" fill="#53616a" font-family="Inter, Arial, sans-serif" font-size="22">The original GPT-2 weights stay fixed. Only two low-rank matrices learn a style-specific correction.</text>
+
+  <g transform="translate(72 190)">
+    <rect x="0" y="0" width="220" height="112" rx="16" fill="#eef3f5" stroke="#cad4d9" stroke-width="2"/>
+    <text x="52" y="48" fill="#111820" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">input x</text>
+    <text x="38" y="78" fill="#6a7880" font-family="Inter, Arial, sans-serif" font-size="18">token activations</text>
+  </g>
+
+  <g transform="translate(356 142)">
+    <rect x="0" y="0" width="318" height="208" rx="20" fill="#243139"/>
+    <text x="48" y="64" fill="#f7fafb" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">frozen base</text>
+    <text x="48" y="102" fill="#c8d3d8" font-family="Inter, Arial, sans-serif" font-size="22">W0 x + b</text>
+    <g transform="translate(44 130)" stroke="#6f858e" stroke-width="2">
+      <rect x="0" y="0" width="42" height="42" fill="#394950"/>
+      <rect x="52" y="0" width="42" height="42" fill="#394950"/>
+      <rect x="104" y="0" width="42" height="42" fill="#394950"/>
+      <rect x="156" y="0" width="42" height="42" fill="#394950"/>
+      <rect x="208" y="0" width="42" height="42" fill="#394950"/>
+    </g>
+    <text x="212" y="64" fill="#ffdc73" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">no gradients</text>
+  </g>
+
+  <g transform="translate(356 392)">
+    <rect x="0" y="0" width="318" height="92" rx="18" fill="#e9fbf6" stroke="#4ee1c1" stroke-width="2"/>
+    <rect x="48" y="25" width="70" height="42" rx="8" fill="#4ee1c1"/>
+    <rect x="152" y="18" width="42" height="56" rx="8" fill="#1f9f89"/>
+    <text x="222" y="54" fill="#11342f" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">B x A</text>
+    <text x="40" y="-18" fill="#2b7467" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">trainable low-rank adapter</text>
+  </g>
+
+  <g transform="translate(774 220)">
+    <circle cx="66" cy="66" r="54" fill="#fff6df" stroke="#ffc857" stroke-width="3"/>
+    <text x="50" y="76" fill="#4a3410" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">+</text>
+  </g>
+
+  <g transform="translate(958 190)">
+    <rect x="0" y="0" width="240" height="112" rx="16" fill="#111820"/>
+    <text x="42" y="48" fill="#f7fafb" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">output y</text>
+    <text x="34" y="78" fill="#b8c5c9" font-family="Inter, Arial, sans-serif" font-size="18">adapted behavior</text>
+  </g>
+
+  <g stroke="#53616a" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <path d="M292 246H356"/>
+    <path d="M292 246C320 246 326 438 356 438"/>
+    <path d="M674 246H774"/>
+    <path d="M674 438C730 438 730 286 774 286"/>
+    <path d="M906 286C928 286 932 246 958 246"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2L10 6L2 10Z" fill="#53616a"/>
+    </marker>
+  </defs>
+</svg>

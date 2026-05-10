@@ -6,6 +6,8 @@ Implement Low-Rank Adaptation (LoRA) manually, inject it into a frozen GPT-2 sma
 
 The assignment emphasizes parameter-efficient fine-tuning: preserve the pretrained model weights, learn small low-rank update matrices, and save only the adapter state.
 
+![LoRA method overview](../img/lora-method.svg)
+
 ## Main Deliverables
 
 - Implement `LoRALinear` as a wrapper around `nn.Linear`.

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620" role="img" aria-labelledby="title desc">
+  <title id="title">RoPE and MoE method overview</title>
+  <desc id="desc">A tiny transformer uses rotary attention and sparse expert routing.</desc>
+  <rect width="1280" height="620" fill="#fbfcfd"/>
+  <text x="64" y="76" fill="#111820" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">RoPE + MoE: position-aware attention, specialist feed-forward</text>
+  <text x="64" y="118" fill="#53616a" font-family="Inter, Arial, sans-serif" font-size="22">RoPE rotates queries and keys by position. MoE routes each token to a few selected experts.</text>
+
+  <g transform="translate(70 186)">
+    <rect x="0" y="0" width="310" height="284" rx="22" fill="#fff8e8" stroke="#ffc857" stroke-width="3"/>
+    <text x="34" y="48" fill="#4a3410" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">RoPE attention</text>
+    <text x="34" y="82" fill="#72551b" font-family="Inter, Arial, sans-serif" font-size="18">rotate Q and K by token position</text>
+    <g transform="translate(76 118)">
+      <circle cx="78" cy="78" r="68" fill="none" stroke="#ffbd2e" stroke-width="7"/>
+      <path d="M78 78L78 18" stroke="#111820" stroke-width="7" stroke-linecap="round"/>
+      <path d="M78 78L134 106" stroke="#111820" stroke-width="7" stroke-linecap="round"/>
+      <path d="M78 78L34 118" stroke="#4ee1c1" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="78" cy="78" r="9" fill="#111820"/>
+      <path d="M154 60C178 92 166 132 136 152" fill="none" stroke="#b38cff" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(486 186)">
+    <rect x="0" y="0" width="310" height="284" rx="22" fill="#e9fbf6" stroke="#4ee1c1" stroke-width="3"/>
+    <text x="34" y="48" fill="#11342f" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">router</text>
+    <text x="34" y="82" fill="#2b7467" font-family="Inter, Arial, sans-serif" font-size="18">score experts and keep top K</text>
+    <g transform="translate(44 124)">
+      <circle cx="28" cy="40" r="18" fill="#111820"/>
+      <circle cx="28" cy="100" r="18" fill="#111820"/>
+      <circle cx="28" cy="160" r="18" fill="#111820"/>
+      <rect x="116" y="0" width="104" height="48" rx="12" fill="#4ee1c1"/>
+      <rect x="116" y="68" width="104" height="48" rx="12" fill="#c8f2ea"/>
+      <rect x="116" y="136" width="104" height="48" rx="12" fill="#4ee1c1"/>
+      <path d="M46 40H116M46 100C78 100 84 24 116 24M46 160C78 160 84 160 116 160" stroke="#2b7467" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(902 186)">
+    <rect x="0" y="0" width="310" height="284" rx="22" fill="#f1ecff" stroke="#b38cff" stroke-width="3"/>
+    <text x="34" y="48" fill="#30204f" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">experts</text>
+    <text x="34" y="82" fill="#67528f" font-family="Inter, Arial, sans-serif" font-size="18">only selected FFNs run per token</text>
+    <g transform="translate(42 126)">
+      <rect x="0" y="0" width="94" height="56" rx="12" fill="#b38cff"/>
+      <rect x="132" y="0" width="94" height="56" rx="12" fill="#d7c7ff"/>
+      <rect x="0" y="96" width="94" height="56" rx="12" fill="#d7c7ff"/>
+      <rect x="132" y="96" width="94" height="56" rx="12" fill="#b38cff"/>
+      <path d="M-34 76C18 76 32 28 94 28M-34 76C18 76 32 124 94 124" stroke="#30204f" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="-38" cy="76" r="13" fill="#30204f"/>
+    </g>
+  </g>
+
+  <g stroke="#53616a" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <path d="M380 328H486"/>
+    <path d="M796 328H902"/>
+  </g>
+  <g transform="translate(176 520)">
+    <rect x="0" y="0" width="928" height="54" rx="14" fill="#111820"/>
+    <text x="34" y="35" fill="#f7fafb" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">tiny language model block = rotary self-attention + sparse expert feed-forward + drop-rate tracking</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2L10 6L2 10Z" fill="#53616a"/>
+    </marker>
+  </defs>
+</svg>

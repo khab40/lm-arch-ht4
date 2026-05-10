@@ -9,6 +9,8 @@ The assignment focuses on two architecture ideas used in modern LLMs:
 - RoPE for position-aware attention without learned position embedding tables.
 - Sparse MoE routing for increasing model capacity while keeping per-token compute bounded.
 
+![RoPE and MoE method overview](../img/rope-moe-method.svg)
+
 ## Main Deliverables
 
 - Reuse the previous homework's base Transformer components where applicable.
