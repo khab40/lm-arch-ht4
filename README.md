@@ -1,5 +1,7 @@
 # LLM Architecture Homework 4
 
+![LLM Architecture Homework 4 banner](img/github-banner.png)
+
 This repository wraps two notebook assignments for experimenting with modern language-model adaptation and architecture components.
 
 ## Contents
