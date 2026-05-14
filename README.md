@@ -6,8 +6,8 @@ This repository wraps two notebook assignments for experimenting with modern lan
 
 ## Contents
 
-- `lora.ipynb` - implement LoRA from scratch for GPT-2, fine-tune on TinyShakespeare, save/load adapters, and compare with PEFT.
-- `tiny_moe_lm.ipynb` - extend a tiny character-level Transformer with RoPE attention and a sparse Mixture-of-Experts feed-forward layer.
+- `notebooks/lora.ipynb` - implement LoRA from scratch for GPT-2, fine-tune on TinyShakespeare, save/load adapters, and compare with PEFT.
+- `notebooks/tiny_moe_lm.ipynb` - extend a tiny character-level Transformer with RoPE attention and a sparse Mixture-of-Experts feed-forward layer.
 - `docs/lora-from-scratch.md` - task explanation, experiment flow, and LoRA method notes.
 - `docs/tiny-moe-lm.md` - overview of the second notebook task.
 - `docs/rope.md` - RoPE method notes: what changes and why it works.
@@ -25,7 +25,7 @@ This repository wraps two notebook assignments for experimenting with modern lan
 
 Use Jupyter or Colab with PyTorch plus the packages imported by each notebook. The LoRA notebook also uses Hugging Face `transformers`, `datasets`, `peft`, and `accelerate`.
 
-Both notebooks import `choose_device()` from `device.py`, which selects `CUDA -> MPS -> CPU` for PyTorch calculations.
+Both notebooks import helper modules from `src/`, including `choose_device()` from `src/device.py`, which selects `CUDA -> MPS -> CPU` for PyTorch calculations.
 
 ## Runtime Notes
 

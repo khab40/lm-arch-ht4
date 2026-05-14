@@ -1,0 +1,10 @@
+accelerate>=0.27
+datasets>=2.18
+huggingface-hub>=0.22
+ipykernel>=6.29
+jupyterlab>=4.0
+matplotlib>=3.8
+peft>=0.10
+requests>=2.31
+torch>=2.4
+transformers>=4.40
