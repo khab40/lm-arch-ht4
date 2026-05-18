@@ -33,6 +33,27 @@ Both notebooks import helper modules from `src/`, including `choose_device()` fr
 - `tiny_moe_lm.ipynb` is expected to train in about 10 minutes on a Colab T4 GPU. CPU execution works but is much slower.
 - Both notebooks use TinyShakespeare as the main dataset.
 
+## Local Editing + Nebius GPU Runs
+
+This repo includes scripts for the workflow used in the course: edit locally with Codex, run GPU-heavy notebooks through the already-configured Jupyter environment on a Nebius VM, and pull the executed notebook/logs back.
+
+1. Copy the config template:
+
+   ```bash
+   cp scripts/nebius.env.example .env.nebius
+   ```
+
+2. Put the current VM public IP, SSH details, and Jupyter Python command into `.env.nebius`.
+
+3. Run a notebook remotely:
+
+   ```bash
+   scripts/nebius-run.sh notebooks/tiny_moe_lm.ipynb
+   ```
+
+Outputs are saved locally under `outputs/nebius/<run-id>/`. See [Local Editing + Nebius Remote Runs](docs/nebius-remote-runs.md) for the full workflow.
+By default, a successful remote run also copies the executed notebook back into the original local notebook path, with a backup saved in the run output directory.
+
 ## Documentation
 
 The docs are intentionally separate from the notebooks so the assignment ideas can be reviewed without running code:
